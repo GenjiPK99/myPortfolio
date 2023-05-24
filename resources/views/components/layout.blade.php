@@ -10,7 +10,7 @@
 <body>
     <x-navbar/>
     <main>
-        {{ $slot }}
+        {{$slot}}
     </main>
     <footer>
         <x-footer/>

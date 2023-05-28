@@ -1,8 +1,10 @@
+@import url(//fonts.googleapis.com/css?family=Lato:300:400);
+
 /* default css start */
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+margin: 0;
+padding: 0;
+box-sizing: border-box;
 }
 
 body{
@@ -35,48 +37,11 @@ width: 100%;
 height: 5px;
 background: linear-gradient(-45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
 background-size: 400% 400%;
-    -webkit-animation: gradbar 15s ease infinite;
-    -moz-animation: gradbar 15s ease infinite;
-    animation: gradbar 15s ease infinite;
+-webkit-animation: gradbar 15s ease infinite;
+-moz-animation: gradbar 15s ease infinite;
+animation: gradbar 15s ease infinite;
 }
 
-/* KEYFRAME ANIMATIONS */
-
-@-webkit-keyframes gradbar {
-	0% {
-		background-position: 0% 50%
-	}
-	50% {
-		background-position: 100% 50%
-	}
-	100% {
-		background-position: 0% 50%
-	}
-}
-
-@-moz-keyframes gradbar {
-	0% {
-		background-position: 0% 50%
-	}
-	50% {
-		background-position: 100% 50%
-	}
-	100% {
-		background-position: 0% 50%
-	}
-}
-
-@keyframes gradbar {
-	0% {
-		background-position: 0% 50%
-	}
-	50% {
-		background-position: 100% 50%
-	}
-	100% {
-		background-position: 0% 50%
-	}
-}
 /* grad-bar end */
 
 /* navbar regular css start */
@@ -162,20 +127,27 @@ transform: translateY(0px) rotate(45deg);
 transform: translateY(-3px) rotate(-45deg);
 }
 
-/* nav-toggler css start */
-  
-  
+/* nav-toggler css end */
+
+
 /* intro-area css start */
+
 .intro-area {
 height: calc(100vh - 61px);
 display: flex;
 align-items: center;
 text-align: center;
-color: #fff;
+color: #ffffff;
 }
 
+.header {
+text-align:center;
+background: linear-gradient(60deg, rgba(85,58,183,1) 0%, rgba(0,172,193,1) 100%);
+} 
+
 .intro-area h2 {
-font-size: 50px;
+font-family: 'Lato', sans-serif;
+font-size: 80px;
 font-weight: 300;
 line-height: 50px;
 margin-bottom: 25px;
@@ -188,58 +160,162 @@ font-size: 18px;
 /* intro-area css end */
 
 
+/* footer-waves  start*/
+
+.footercustom {
+text-align:center;
+background: linear-gradient(60deg, rgba(85,58,183,1) 0%, rgba(0,172,193,1) 100%);
+} 
+    
+.flex { /*Flexbox for containers*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.waves {
+  position:relative;
+  width: 100%;
+  height:15vh;
+  margin-bottom:-7px; /*Fix for safari gap*/
+  min-height:100px;
+  max-height:150px;
+}
+
+.content {
+  position:relative;
+  height:20vh;
+  text-align:center;
+  background-color: white;
+}
+/* footer-waves  end*/
+
+/* Animation waves */
+
+.parallax > use {
+animation: move-forever 25s cubic-bezier(.55,.5,.45,.5)     infinite;
+}
+.parallax > use:nth-child(1) {
+animation-delay: -2s;
+animation-duration: 7s;
+}
+.parallax > use:nth-child(2) {
+animation-delay: -3s;
+animation-duration: 10s;
+}
+.parallax > use:nth-child(3) {
+animation-delay: -4s;
+animation-duration: 13s;
+}
+.parallax > use:nth-child(4) {
+animation-delay: -5s;
+animation-duration: 20s;
+}
+
+/* KEYFRAME ANIMATIONS */
+
+@keyframes move-forever {
+0% {
+transform: translate3d(-90px,0,0);
+}
+100% { 
+transform: translate3d(85px,0,0);
+}
+}
+
+@-webkit-keyframes gradbar {
+0% {
+background-position: 0% 50%
+}
+50% {
+background-position: 100% 50%
+}
+100% {
+background-position: 0% 50%
+}
+}
+
+@-moz-keyframes gradbar {
+0% {
+background-position: 0% 50%
+}
+50% {
+background-position: 100% 50%
+}
+100% {
+background-position: 0% 50%
+}
+}
+
+@keyframes gradbar {
+0% {
+background-position: 0% 50%
+}
+50% {
+background-position: 100% 50%
+}
+100% {
+background-position: 0% 50%
+}
+}
+
 /* mobile breakpoint start */
 @media screen and (max-width: 767px) {
 .container {
-    max-width: 720px;
+max-width: 720px;
 }
 
 /* navbar css for mobile start */
 .nav-toggler{
-    display: block;
+display: block;
 }
 
 .site-navbar {
-    min-height: 60px;
+min-height: 60px;
 }
 
 .site-navbar ul {
-    position: absolute;
-    width: 100%;
-    height: calc(100vh - 60px);
-    left: 0;
-    top: 60px;
-    flex-direction: column;
-    align-items: center;
-    border-top: 5px solid #ffffff;
-    background-color: rgba(0,0,0,.75);
-    max-height: 0;
-    overflow: hidden;
-    transition: .3s;
+position: absolute;
+width: 100%;
+height: calc(100vh - 60px);
+left: 0;
+top: 60px;
+flex-direction: column;
+align-items: center;
+border-top: 5px solid #ffffff;
+background-color: rgba(0,0,0,.75);
+max-height: 0;
+overflow: hidden;
+transition: .3s;
 }
 
 .site-navbar ul li {
-    width: 100%;
-    text-align: center;
+width: 100%;
+text-align: center;
 }
 
 .site-navbar ul li a {
-    padding: 25px;
+padding: 25px;
 }
 
 .site-navbar ul li a:hover {
-    background-color: rgba(255,255,255,.1);
+background-color: rgba(255,255,255,.1);
 }
 
 .site-navbar ul.open {
-    max-height: 100vh;
-    overflow: visible;
+max-height: 100vh;
+overflow: visible;
 }
 
 .intro-area h2 {
-    font-size: 36px;
-    margin-bottom: 15px;
+font-size: 36px;
+margin-bottom: 15px;
 }  
+.waves {
+height:40px;
+min-height:40px;
+}
 
 /* navbar css for mobile end */
 }

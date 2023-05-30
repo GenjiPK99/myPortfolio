@@ -11,6 +11,7 @@
     <x-navbar/>
     <main>
         {{$slot}}
+        <x-slider/>
     </main>
     <footer>
         <x-footer/>
